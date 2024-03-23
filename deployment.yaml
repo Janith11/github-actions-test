@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-action-gke
+  labels:
+    app: github-action-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-action-gke
+  template:
+    metadata:
+      labels:
+        app: github-action-gke
+    spec:
+      containers:
+        - name: issue-management-service
+          image: gcr.io/developer-iq-tracker/issue-management-service:prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /api/v1/issue-management-service/actuator/health
+            initialDelaySeconds: 40
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /api/v1/issue-management-service/actuator/health
+            initialDelaySeconds: 40
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: "300m"
+              memory: "400Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
