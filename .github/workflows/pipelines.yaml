@@ -2,9 +2,9 @@ name: Build and deploy to GKE ci cd flow
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
