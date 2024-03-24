@@ -47,7 +47,7 @@ jobs:
     #    run: gcloud auth activate-service-account --key-file="${{ secrets.GKE_SA_KEY }}"
 
       - name: set account
-        run: gcloud config set account "90554679503-compute@developer.gserviceaccount.com"
+        run: gcloud config set account "ci-cd-service-account@github-actions-test-418116.iam.gserviceaccount.com"
 
       - name: Get GKE Credentials GKE
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
