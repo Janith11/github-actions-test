@@ -8,8 +8,8 @@ on:
 
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
-  GKE_CLUSTER: github-action-test
-  GKE_ZONE: us-central1-a
+  GKE_CLUSTER: seshat
+  GKE_ZONE: us-central1-c
   DEPLOYMENT_NAME: github-actions-ake-deployment
   IMAGE: github-actions-gke-image
   TAG: prod
