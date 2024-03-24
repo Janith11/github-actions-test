@@ -43,8 +43,8 @@ jobs:
       - name: Configure Docker in GKE
         run: gcloud --quiet auth configure-docker
 
-      - name: Activate Service Account test
-        run: gcloud auth activate-service-account --key-file="${{ secrets.GKE_SA_KEY }}"
+    #  - name: Activate Service Account test
+    #    run: gcloud auth activate-service-account --key-file="${{ secrets.GKE_SA_KEY }}"
 
       - name: Get GKE Credentials GKE
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
