@@ -46,8 +46,8 @@ jobs:
     #  - name: Activate Service Account test
     #    run: gcloud auth activate-service-account --key-file="${{ secrets.GKE_SA_KEY }}"
 
-      - name: set account
-        run: gcloud config set account "janith.20230370@iit.ac.lk"
+      #- name: set account
+      #  run: gcloud config set account "janith.20230370@iit.ac.lk"
 
       - name: Get GKE Credentials GKE
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
