@@ -44,13 +44,6 @@ jobs:
       - name: Configure Docker in GKE
         run: gcloud --quiet auth configure-docker
 
-
-      - name: Set Service Account
-        run: gcloud config set account "$ACCOUNT"
-
-      - name: Login GCP
-        run: gcloud auth login
-
       - name: Get GKE Credentials GKE user
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
 
