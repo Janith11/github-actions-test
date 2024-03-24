@@ -9,7 +9,7 @@ on:
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
   GKE_CLUSTER: github-action-test
-  GKE_ZONE: us-central1
+  GKE_ZONE: us-central1-a
   DEPLOYMENT_NAME: github-actions-ake-deployment
   IMAGE: github-actions-gke-image
   TAG: prod
