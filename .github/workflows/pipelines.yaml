@@ -13,6 +13,7 @@ env:
   DEPLOYMENT_NAME: github-actions-ake-deployment
   IMAGE: github-actions-gke-image
   TAG: prod
+  ACCOUNT: janith.20230370@iit.ac.lk
 
 jobs:
   setup-build-publish-deploy:
@@ -42,6 +43,9 @@ jobs:
 
       - name: Configure Docker in GKE
         run: gcloud --quiet auth configure-docker
+
+      - name: Set Service Account
+        run: gcloud config set account "$ACCOUNT"
 
       - name: Get GKE Credentials GKE user
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
