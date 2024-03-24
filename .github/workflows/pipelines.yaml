@@ -43,6 +43,9 @@ jobs:
       - name: Configure Docker in GKE
         run: gcloud --quiet auth configure-docker
 
+      - name: Activate Service Account
+        run : gcloud auth activate-service-account ACCOUNT --key-file=${{secrets.GKE_SERVICE_ACC}}
+
       - name : Add Gmail account
         run : gcloud config set account janith.20230370@iit.ac.lk
 
