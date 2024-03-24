@@ -49,7 +49,7 @@ jobs:
       #- name: set account
       #  run: gcloud config set account "janith.20230370@iit.ac.lk"
 
-      - name: Get GKE Credentials GKE
+      - name: Get GKE Credentials GKE user
         run: gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
 
       - name: Build Docker Image GCR
